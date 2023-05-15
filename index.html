@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>SVG Filters</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <svg height="900" width="900">
+        <filter id="f1" x="0" y="0">
+            <feMorphology operator="dilate" radius="1" ></feMorphology>
+        </filter>
+        <filter id="f2" x="0" y="0">
+            <feDropShadow dx="3" dy="3" stdDeviation="4" flood-opacity="1"/>
+        </filter>
+        <filter id="f3" x="0" y="0">
+            <feColorMatrix
+            in="SourceGraphic"
+            type="matrix"
+            values=".1 .7 .7 0 0
+                    .1 0 0 0 0
+                    .1 0 0 0 0
+                    0 0 0 1 0" />
+        </filter>
+        <image filter="url(#f1)" href="https://cdn.shopify.com/s/files/1/0863/7722/products/italian-cheese-buy-grana-padano-aged-over-18-months-shipped-free-1_600x.png?v=1551200458" height="200" width="200" ></image>
+        <image filter="url(#f2)" y="225" href="https://cdn.shopify.com/s/files/1/0863/7722/products/italian-cheese-buy-grana-padano-aged-over-18-months-shipped-free-1_600x.png?v=1551200458" height="200" width="200" ></image>
+        <image filter="url(#f3)" y="450" href="https://cdn.shopify.com/s/files/1/0863/7722/products/italian-cheese-buy-grana-padano-aged-over-18-months-shipped-free-1_600x.png?v=1551200458" height="200" width="200" ></image>
+    </svg>
+</body>
+</html>
